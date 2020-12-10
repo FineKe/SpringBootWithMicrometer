@@ -1,0 +1,12 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 30000
+  metrics:
+    distribution:
+      percentiles-histogram[http.server.requests]: true
+      maximum-expected-value[http.server.requests]: 10000
+      minimum-expected-value[http.server.requests]: 1
